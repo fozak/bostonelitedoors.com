@@ -1,100 +1,141 @@
 /*
- * tabler-warm.css  —  Option A: Brick & Mortar
- * Primary: #8b3a1f  rgb(139,58,31)
- * Drop AFTER tabler.min.css. Zero edits to Tabler source.
+ * tabler-warm.css  —  Option A: Brick & Mortar  +  Gold Accents
+ * Primary brand:  #8b3a1f  rgb(139,58,31)   — brick red
+ * Action/accent:  #c8a060  rgb(200,160,96)  — sand gold
  *
  *   <link rel="stylesheet" href="tabler.min.css">
  *   <link rel="stylesheet" href="tabler-warm.css">
+ *   <link rel="stylesheet" href="site.css">        ← site.css must stay LAST
  */
 
-/* ── GOOGLE FONTS ── */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@300;400;700&display=swap');
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   1. ROOT TOKEN OVERRIDE
-   The critical fix: override BOTH the hex var AND the -rgb companion.
-   Tabler uses rgba(var(--tblr-primary-rgb), .1) everywhere for tints —
-   if only the hex changes, all tinted surfaces stay blue.
+   1. CSS VARIABLE OVERRIDE
+   Override BOTH hex AND -rgb companion — Tabler uses
+   rgba(var(--tblr-primary-rgb), opacity) everywhere for tints/focus rings.
    ═══════════════════════════════════════════════════════════════════════════ */
 :root,
 [data-bs-theme=light] {
-
-  /* ── Primary: deep brick red ── */
-  --tblr-blue:                    #8b3a1f;
-  --tblr-blue-rgb:                139, 58, 31;
-  --tblr-azure:                   #b85c35;
-  --tblr-azure-rgb:               184, 92, 53;
-  --tblr-primary:                 #8b3a1f;
-  --tblr-primary-rgb:             139, 58, 31;   /* ← stops blue rgba() bleed */
-  --tblr-tabler:                  #8b3a1f;
-  --tblr-tabler-rgb:              139, 58, 31;
-
-  /* ── Primary semantic variants ── */
-  --tblr-primary-text:            #6a2c17;
-  --tblr-primary-bg-subtle:       #fde8d8;
-  --tblr-primary-border-subtle:   #e8b89a;
-
-  /* ── Links ── */
-  --tblr-link-color:              #8b3a1f;
-  --tblr-link-color-rgb:          139, 58, 31;
-  --tblr-link-hover-color:        #6a2c17;
-  --tblr-link-hover-color-rgb:    106, 44, 23;
-
-  /* ── Body & surfaces ── */
-  --tblr-body-bg:                 #faf6f2;
-  --tblr-body-bg-rgb:             250, 246, 242;
-  --tblr-body-color:              #2a1206;
-  --tblr-body-color-rgb:          42, 18, 6;
-
-  --tblr-secondary-bg:            #e8ddd4;
-  --tblr-secondary-bg-rgb:        232, 221, 212;
-  --tblr-tertiary-bg:             #f0e8e0;
-  --tblr-tertiary-bg-rgb:         240, 232, 224;
-
-  /* ── Borders ── */
-  --tblr-border-color:            #ddd0c4;
-  --tblr-border-color-translucent:rgba(139, 58, 31, 0.12);
-
-  /* ── Muted / secondary text ── */
-  --tblr-muted:                   #8c6050;
-  --tblr-gray:                    #7a6258;
-  --tblr-gray-dark:               #3d1a0a;
-
-  /* ── Heading color (Tabler sets this explicitly) ── */
-  --tblr-heading-color:           #2a1206;
-
-  /* ── Highlight (replaces yellow) ── */
-  --tblr-highlight-bg:            #fde8d8;
-
-  /* ── Form controls ── */
-  --tblr-form-control-bg:         #faf6f2;
-
-  /* ── Font ── */
-  --tblr-font-sans-serif:         'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+  --tblr-blue:                     #8b3a1f;
+  --tblr-blue-rgb:                 139, 58, 31;
+  --tblr-azure:                    #c8a060;
+  --tblr-azure-rgb:                200, 160, 96;
+  --tblr-indigo:                   #8b3a1f;
+  --tblr-primary:                  #8b3a1f;
+  --tblr-primary-rgb:              139, 58, 31;
+  --tblr-tabler:                   #8b3a1f;
+  --tblr-tabler-rgb:               139, 58, 31;
+  --tblr-primary-text:             #6a2c17;
+  --tblr-primary-bg-subtle:        #fde8d8;
+  --tblr-primary-border-subtle:    #e8b89a;
+  --tblr-link-color:               #8b3a1f;
+  --tblr-link-color-rgb:           139, 58, 31;
+  --tblr-link-hover-color:         #6a2c17;
+  --tblr-link-hover-color-rgb:     106, 44, 23;
+  --tblr-body-bg:                  #faf6f2;
+  --tblr-body-bg-rgb:              250, 246, 242;
+  --tblr-body-color:               #2a1206;
+  --tblr-body-color-rgb:           42, 18, 6;
+  --tblr-secondary-bg:             #e8ddd4;
+  --tblr-secondary-bg-rgb:         232, 221, 212;
+  --tblr-tertiary-bg:              #f0e8e0;
+  --tblr-tertiary-bg-rgb:          240, 232, 224;
+  --tblr-border-color:             #ddd0c4;
+  --tblr-border-color-translucent: rgba(139, 58, 31, 0.12);
+  --tblr-muted:                    #8c6050;
+  --tblr-gray:                     #7a6258;
+  --tblr-gray-dark:                #3d1a0a;
+  --tblr-heading-color:            #2a1206;
+  --tblr-highlight-bg:             #fde8d8;
+  --tblr-form-control-bg:          #faf6f2;
+  --tblr-font-sans-serif:          'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   2. BODY
+   2. NUCLEAR UTILITY CLASS OVERRIDE
+   Explicit hex beats variable-based rgba() — no inheritance needed.
+   These rules are the final word on any .bg-primary / .bg-blue element.
+   ═══════════════════════════════════════════════════════════════════════════ */
+.bg-primary,
+.bg-blue,
+.bg-indigo        { background-color: #8b3a1f !important; color: #fff !important; }
+
+.bg-azure         { background-color: #c8a060 !important; color: #fff !important; }
+
+.bg-primary-lt,
+.bg-blue-lt       { background-color: #fde8d8 !important; color: #8b3a1f !important; }
+
+.text-primary,
+.text-blue        { color: #8b3a1f !important; }
+
+.text-azure       { color: #c8a060 !important; }
+
+.text-muted       { color: #8c6050 !important; }
+
+.border-primary,
+.border-blue      { border-color: #8b3a1f !important; }
+
+/* avatar color helpers */
+.avatar.bg-primary,
+.avatar.bg-blue   { background-color: #8b3a1f !important; color: #fff !important; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   3. BODY
    ═══════════════════════════════════════════════════════════════════════════ */
 body {
   background-color: #faf6f2;
   color: #2a1206;
+  font-family: 'Lato', sans-serif;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   3. HEADINGS — Playfair Display
+   4. HEADINGS — Playfair Display
    ═══════════════════════════════════════════════════════════════════════════ */
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6,
 .display-1, .display-2, .display-3,
 .display-4, .display-5, .display-6,
-.card-title, .page-title, .navbar-brand {
+.card-title, .page-title {
   font-family: 'Playfair Display', Georgia, serif;
+  color: #2a1206;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   4. NAVBAR (top horizontal bar)
+   5. TOPBAR  (#cmp-topbar)
    ═══════════════════════════════════════════════════════════════════════════ */
+#cmp-topbar,
+#cmp-topbar > *,
+#cmp-topbar .bg-dark,
+#cmp-topbar .navbar,
+#cmp-topbar [class] {
+  background-color: #1e1008 !important;
+  border-bottom-color: #3a1a08 !important;
+}
+
+#cmp-topbar,
+#cmp-topbar a,
+#cmp-topbar span,
+#cmp-topbar p {
+  color: #c8b0a0 !important;
+}
+
+/* icon circles in topbar */
+#cmp-topbar .rounded-circle,
+#cmp-topbar .avatar,
+#cmp-topbar .bg-primary,
+#cmp-topbar .bg-blue,
+#cmp-topbar [class*="bg-primary"],
+#cmp-topbar [class*="bg-blue"] {
+  background-color: #8b3a1f !important;
+  color: #fff !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   6. NAVBAR  (#cmp-navbar)
+   ═══════════════════════════════════════════════════════════════════════════ */
+#cmp-navbar .navbar,
+#cmp-navbar nav,
 .navbar,
 .navbar-dark,
 .navbar[data-bs-theme=dark] {
@@ -104,109 +145,174 @@ h1, h2, h3, h4, h5, h6,
 
 .navbar-brand,
 .navbar-brand:hover {
-  color: #f5ddd0 !important;
   font-family: 'Playfair Display', Georgia, serif;
+  color: #f5ddd0 !important;
 }
 
 .navbar .nav-link,
-.navbar-dark .nav-link {
+.navbar-dark .nav-link,
+#cmp-navbar .nav-link {
   color: #d4b8a8 !important;
 }
 
 .navbar .nav-link:hover,
 .navbar .nav-link.active,
-.navbar-dark .nav-link:hover,
-.navbar-dark .nav-link.active {
-  color: #f5a07a !important;   /* warm terracotta highlight */
+.navbar-dark .nav-link.active,
+#cmp-navbar .nav-link:hover,
+#cmp-navbar .nav-link.active {
+  color: #c8a060 !important;   /* gold on hover */
 }
 
-/* ── toggler icon ── */
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(212,184,168,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
+/* ── Navbar CTA button → gold ── */
+#cmp-navbar .btn,
+#cmp-navbar .btn-primary,
+.navbar .btn-primary,
+nav .btn-primary {
+  background-color: #c8a060 !important;
+  border-color: #c8a060 !important;
+  color: #fff !important;
+  font-weight: 700;
+}
+
+#cmp-navbar .btn:hover,
+#cmp-navbar .btn-primary:hover,
+.navbar .btn-primary:hover {
+  background-color: #a8804a !important;
+  border-color: #a8804a !important;
+}
+
 /* ═══════════════════════════════════════════════════════════════════════════
-   5. VERTICAL SIDEBAR / NAVBAR-VERTICAL
+   7. STATS BAR  (#cmp-stats-bar)
+   That blue strip — override background + any icon circles
    ═══════════════════════════════════════════════════════════════════════════ */
-.navbar-vertical,
-.navbar-vertical.navbar-dark {
-  background-color: #2e1007 !important;
-  border-right-color: #4a1c0c !important;
+#cmp-stats-bar,
+#cmp-stats-bar > *,
+#cmp-stats-bar .bg-primary,
+#cmp-stats-bar .bg-blue,
+#cmp-stats-bar [class*="bg-primary"],
+#cmp-stats-bar [class*="bg-blue"] {
+  background-color: #2a1206 !important;
+  border-color: #3d1a0a !important;
 }
 
-.navbar-vertical .nav-link {
-  color: #c8a898 !important;
-  border-radius: 4px;
+#cmp-stats-bar,
+#cmp-stats-bar * {
+  color: #e8d8cc !important;
 }
 
-.navbar-vertical .nav-link:hover {
-  background-color: rgba(139, 58, 31, 0.18) !important;
-  color: #f5ddd0 !important;
+/* stat numbers → gold */
+#cmp-stats-bar strong,
+#cmp-stats-bar .h1, #cmp-stats-bar .h2, #cmp-stats-bar .h3,
+#cmp-stats-bar h1, #cmp-stats-bar h2, #cmp-stats-bar h3,
+#cmp-stats-bar [class*="display-"],
+#cmp-stats-bar .fw-bold,
+#cmp-stats-bar .fs-1, #cmp-stats-bar .fs-2 {
+  color: #c8a060 !important;
+  font-family: 'Playfair Display', Georgia, serif;
 }
 
-.navbar-vertical .nav-link.active {
-  background-color: #8b3a1f !important;
+/* ═══════════════════════════════════════════════════════════════════════════
+   8. HERO
+   ═══════════════════════════════════════════════════════════════════════════ */
+/* hero badge → gold */
+.hero-badge {
+  background-color: #c8a060 !important;
+  color: #fff !important;
+  border-color: #c8a060 !important;
+  font-weight: 700 !important;
+  letter-spacing: .06em !important;
+}
+
+/* hero CTA button → gold */
+.hero .btn-primary,
+.hero-caption .btn-primary,
+.hero a.btn-primary {
+  background-color: #c8a060 !important;
+  border-color: #c8a060 !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+}
+
+.hero .btn-primary:hover,
+.hero-caption .btn-primary:hover {
+  background-color: #a8804a !important;
+  border-color: #a8804a !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   9. SERVICE ICON CIRCLES  (#cmp-services)
+   Every possible Tabler pattern for a colored circle icon
+   ═══════════════════════════════════════════════════════════════════════════ */
+#cmp-services .rounded-circle,
+#cmp-services .avatar,
+#cmp-services .bg-primary,
+#cmp-services .bg-blue,
+#cmp-services .bg-azure,
+#cmp-services [class*="bg-primary"],
+#cmp-services [class*="bg-blue"],
+#cmp-services [class*="icon"] {
+  background-color: #c8a060 !important;   /* gold circles */
   color: #fff !important;
 }
 
-.navbar-vertical .nav-link.active .nav-link-icon {
-  color: #fde8d8 !important;
+/* also catch them if outside #cmp-services but inside a .card */
+.card .rounded-circle.bg-primary,
+.card .rounded-circle.bg-blue,
+.card .avatar.bg-primary,
+.card .avatar.bg-blue {
+  background-color: #c8a060 !important;
+  color: #fff !important;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   6. PRIMARY BUTTON — and all btn-primary variants Tabler generates
+   10. BUTTONS — global
+   Primary → brick red. Gold reserved for hero/navbar CTA.
    ═══════════════════════════════════════════════════════════════════════════ */
 .btn-primary {
-  --tblr-btn-bg:             #8b3a1f;
-  --tblr-btn-border-color:   #8b3a1f;
-  --tblr-btn-hover-bg:       #6a2c17;
-  --tblr-btn-hover-border-color: #6a2c17;
-  --tblr-btn-active-bg:      #5a2410;
-  --tblr-btn-color:          #fff;
-  --tblr-btn-hover-color:    #fff;
-  background-color: #8b3a1f;
-  border-color: #8b3a1f;
-  color: #fff;
+  background-color: #8b3a1f !important;
+  border-color: #8b3a1f !important;
+  color: #fff !important;
 }
 
 .btn-primary:hover,
 .btn-primary:focus-visible,
-.btn-primary:active,
-.btn-primary.active,
-.show > .btn-primary.dropdown-toggle {
+.btn-primary:active {
   background-color: #6a2c17 !important;
   border-color: #6a2c17 !important;
   color: #fff !important;
 }
 
-/* focus ring — was blue */
 .btn-primary:focus,
 .btn-primary:focus-visible {
   box-shadow: 0 0 0 .25rem rgba(139, 58, 31, 0.35) !important;
 }
 
-/* ghost / outline variant */
 .btn-outline-primary {
-  color: #8b3a1f;
-  border-color: #8b3a1f;
-}
-.btn-outline-primary:hover {
-  background-color: #8b3a1f;
-  border-color: #8b3a1f;
-  color: #fff;
+  color: #8b3a1f !important;
+  border-color: #8b3a1f !important;
+  background-color: transparent !important;
 }
 
-/* subtle / ghost variant Tabler sometimes emits */
-.btn-ghost-primary {
-  color: #8b3a1f;
+.btn-outline-primary:hover {
+  background-color: #8b3a1f !important;
+  color: #fff !important;
 }
+
+.btn-ghost-primary {
+  color: #8b3a1f !important;
+}
+
 .btn-ghost-primary:hover {
-  background-color: #fde8d8;
-  color: #6a2c17;
+  background-color: #fde8d8 !important;
+  color: #6a2c17 !important;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   7. CARDS
+   11. CARDS
    ═══════════════════════════════════════════════════════════════════════════ */
 .card {
   background-color: #fff;
@@ -225,48 +331,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   8. LINKS
-   ═══════════════════════════════════════════════════════════════════════════ */
-a {
-  color: #8b3a1f;
-}
-a:hover {
-  color: #6a2c17;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   9. BADGES & BACKGROUND UTILITIES
-   These use .bg-primary / .bg-azure / .bg-blue which Tabler hardcodes
-   ═══════════════════════════════════════════════════════════════════════════ */
-.bg-primary,
-.badge.bg-primary {
-  background-color: #8b3a1f !important;
-}
-
-.bg-blue,
-.badge.bg-blue {
-  background-color: #8b3a1f !important;
-}
-
-.bg-azure,
-.badge.bg-azure {
-  background-color: #b85c35 !important;
-}
-
-/* subtle / light badge tint */
-.bg-primary-lt {
-  background-color: #fde8d8 !important;
-  color: #8b3a1f !important;
-}
-
-/* text color utilities */
-.text-primary { color: #8b3a1f !important; }
-.text-blue    { color: #8b3a1f !important; }
-.text-azure   { color: #b85c35 !important; }
-.text-muted   { color: #8c6050 !important; }
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   10. FORM CONTROLS
+   12. FORMS
    ═══════════════════════════════════════════════════════════════════════════ */
 .form-control,
 .form-select {
@@ -279,7 +344,7 @@ a:hover {
 .form-select:focus {
   background-color: #fff;
   border-color: #8b3a1f;
-  box-shadow: 0 0 0 .2rem rgba(139, 58, 31, 0.20);
+  box-shadow: 0 0 0 .2rem rgba(139, 58, 31, 0.18);
   color: #2a1206;
 }
 
@@ -288,369 +353,267 @@ a:hover {
   border-color: #8b3a1f;
 }
 
-.form-check-input:focus {
-  box-shadow: 0 0 0 .2rem rgba(139, 58, 31, 0.25);
-  border-color: #8b3a1f;
-}
+/* ═══════════════════════════════════════════════════════════════════════════
+   13. TABLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+.table > :not(caption) > * > * { color: #2a1206; }
+.table-striped > tbody > tr:nth-of-type(odd) > * { background-color: rgba(139,58,31,.04); }
+.table-hover > tbody > tr:hover > * { background-color: rgba(139,58,31,.07); }
+.table th { color: #8c6050; border-bottom-color: #ddd0c4; }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   11. TABLES
+   14. PAGE SURFACES
    ═══════════════════════════════════════════════════════════════════════════ */
-.table > :not(caption) > * > * {
-  color: #2a1206;
-}
-
-.table-striped > tbody > tr:nth-of-type(odd) > * {
-  background-color: rgba(139, 58, 31, 0.04);
-}
-
-.table-hover > tbody > tr:hover > * {
-  background-color: rgba(139, 58, 31, 0.07);
-}
-
-.table th {
-  color: #8c6050;
-  border-bottom-color: #ddd0c4;
-}
+.page-wrapper, .page-body, .page-body-inner { background-color: #faf6f2; }
+.page-header { border-bottom-color: #ddd0c4; }
+.section-bg { background-color: #f0e8e0 !important; }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   12. PAGE WRAPPER
+   15. DROPDOWNS
    ═══════════════════════════════════════════════════════════════════════════ */
-.page-wrapper,
-.page-body,
-.page-body-inner {
-  background-color: #faf6f2;
-}
-
-.page-header {
-  border-bottom-color: #ddd0c4;
-}
+.dropdown-menu { background-color: #fff; border-color: #ddd0c4; }
+.dropdown-item:hover, .dropdown-item:focus { background-color: #fde8d8; color: #8b3a1f; }
+.dropdown-item.active, .dropdown-item:active { background-color: #8b3a1f; color: #fff; }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   13. DROPDOWNS
+   16. PAGINATION / TABS / PILLS / BREADCRUMB / ALERTS / PROGRESS
    ═══════════════════════════════════════════════════════════════════════════ */
-.dropdown-menu {
-  background-color: #fff;
-  border-color: #ddd0c4;
-}
+.page-link { color: #8b3a1f; border-color: #ddd0c4; }
+.page-link:hover { color: #6a2c17; background-color: #fde8d8; }
+.page-item.active .page-link { background-color: #8b3a1f; border-color: #8b3a1f; color: #fff; }
 
-.dropdown-item:hover,
-.dropdown-item:focus {
-  background-color: #fde8d8;
-  color: #8b3a1f;
+.nav-tabs .nav-link { color: #8c6050; }
+.nav-tabs .nav-link:hover { color: #8b3a1f; }
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+  color: #8b3a1f; border-bottom: 2px solid #8b3a1f;
 }
+.nav-pills .nav-link.active { background-color: #8b3a1f; color: #fff; }
 
-.dropdown-item.active,
-.dropdown-item:active {
-  background-color: #8b3a1f;
-  color: #fff;
-}
+.breadcrumb-item a { color: #8b3a1f; }
+.breadcrumb-item.active { color: #8c6050; }
+
+.alert-primary { background-color: #fde8d8; border-color: #e8b89a; color: #6a2c17; }
+.alert-info    { background-color: #fde8d8; border-color: #e8b89a; color: #6a2c17; }
+
+.progress-bar { background-color: #8b3a1f; }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   14. PAGINATION
+   17. FOOTER
    ═══════════════════════════════════════════════════════════════════════════ */
-.page-link {
-  color: #8b3a1f;
-  border-color: #ddd0c4;
+#cmp-footer,
+.footer,
+footer {
+  background-color: #1e1008 !important;
+  border-top-color: #3a1a08 !important;
+  color: #c8b0a0 !important;
 }
 
-.page-link:hover {
-  color: #6a2c17;
-  background-color: #fde8d8;
-  border-color: #ddd0c4;
-}
-
-.page-item.active .page-link {
-  background-color: #8b3a1f;
-  border-color: #8b3a1f;
-  color: #fff;
-}
+#cmp-footer a, .footer a, footer a { color: #d4b8a8 !important; }
+#cmp-footer a:hover, .footer a:hover, footer a:hover { color: #c8a060 !important; }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   15. TABS & PILLS
+   18. SELECTION + SCROLLBAR
    ═══════════════════════════════════════════════════════════════════════════ */
-.nav-tabs .nav-link {
-  color: #8c6050;
-}
-
-.nav-tabs .nav-link:hover {
-  color: #8b3a1f;
-  border-color: transparent transparent #ddd0c4;
-}
-
-.nav-tabs .nav-link.active,
-.nav-tabs .nav-item.show .nav-link {
-  color: #8b3a1f;
-  border-bottom-color: #8b3a1f;
-  border-bottom-width: 2px;
-}
-
-.nav-pills .nav-link.active {
-  background-color: #8b3a1f;
-  color: #fff;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   16. ALERTS
-   ═══════════════════════════════════════════════════════════════════════════ */
-.alert-primary {
-  background-color: #fde8d8;
-  border-color: #e8b89a;
-  color: #6a2c17;
-}
-
-.alert-info {
-  background-color: #fde8d8;
-  border-color: #e8b89a;
-  color: #6a2c17;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   17. PROGRESS
-   ═══════════════════════════════════════════════════════════════════════════ */
-.progress-bar {
-  background-color: #8b3a1f;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   18. BREADCRUMB
-   ═══════════════════════════════════════════════════════════════════════════ */
-.breadcrumb-item a {
-  color: #8b3a1f;
-}
-
-.breadcrumb-item.active {
-  color: #8c6050;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   19. STEPS / WIZARD (Tabler component — uses primary color)
-   ═══════════════════════════════════════════════════════════════════════════ */
-.step-item.active .step-link,
-.step-item.active .step-link:hover {
-  color: #8b3a1f;
-  border-color: #8b3a1f;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   20. RIBBONS & STATUS DOTS
-   ═══════════════════════════════════════════════════════════════════════════ */
-.ribbon-primary { background-color: #8b3a1f; }
-.status-primary { background-color: #8b3a1f; }
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   21. ICONS — Tabler icon color when paired with text-primary
-   ═══════════════════════════════════════════════════════════════════════════ */
-.icon-primary,
-.nav-link-icon.text-primary {
-  color: #8b3a1f !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   22. HR / DIVIDERS
-   ═══════════════════════════════════════════════════════════════════════════ */
-hr {
-  border-color: #ddd0c4;
-  opacity: 1;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   23. SELECTION + SCROLLBAR
-   ═══════════════════════════════════════════════════════════════════════════ */
-::selection {
-  background-color: rgba(139, 58, 31, 0.18);
-  color: #2a1206;
-}
-
+::selection { background-color: rgba(139,58,31,.18); color: #2a1206; }
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: #f0e8e0; }
 ::-webkit-scrollbar-thumb { background: #c9a090; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: #8b3a1f; }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   24. FOOTER / SUBPAGE SECTIONS
-   ═══════════════════════════════════════════════════════════════════════════ */
-.footer {
-  background-color: #3d1a0a;
-  border-top-color: #5a2810;
-  color: #c8a898;
-}
-
-.footer a {
-  color: #d4b8a8;
-}
-
-.footer a:hover {
-  color: #f5a07a;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   25. SECTION BACKGROUND ALTERNATION (your .section-bg class)
-   ═══════════════════════════════════════════════════════════════════════════ */
-.section-bg {
-  background-color: #f0e8e0 !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   26. AVATAR STACKS
-   ═══════════════════════════════════════════════════════════════════════════ */
-.avatar-list-stacked .avatar {
-  border-color: #fff;
-}
-
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   27. TOPBAR (the dark navy strip at the very top)
-   In components.js this is likely rendered with bg-dark or bg-primary-dark.
-   Override both.
-   ═══════════════════════════════════════════════════════════════════════════ */
-#cmp-topbar,
-#cmp-topbar > div,
-.topbar,
-[class*="topbar"] {
-  background-color: #2e1007 !important;
-  border-bottom: 1px solid #4a1c0c !important;
-  color: #d4b8a8 !important;
-}
-
-#cmp-topbar a,
-.topbar a,
-[class*="topbar"] a {
-  color: #d4b8a8 !important;
-}
-
-#cmp-topbar .icon,
-#cmp-topbar i,
-.topbar i {
-  color: #f5a07a !important;
-}
-
-/* Icon circles inside topbar — the blue location/mail/phone circles */
-#cmp-topbar .avatar,
-#cmp-topbar .icon-box,
-#cmp-topbar [class*="rounded-circle"],
-#cmp-topbar [class*="bg-primary"],
-#cmp-topbar [class*="bg-blue"],
-.topbar .rounded-circle,
-.topbar [class*="bg-primary"] {
-  background-color: #8b3a1f !important;
-  color: #fff !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   28. HERO BADGE ("Greater Boston's Trusted Contractor" pill)
-   Likely .badge.bg-primary or a custom span — override all combos
-   ═══════════════════════════════════════════════════════════════════════════ */
-.hero-badge,
-.hero .badge,
-.hero [class*="bg-primary"],
-.hero [class*="bg-blue"],
-.hero span.badge {
-  background-color: #8b3a1f !important;
-  color: #fff !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   29. SERVICE CARD ICON CIRCLES
-   The blue circles overlapping the service card images.
-   These are typically .avatar.bg-primary, .icon-box, or a custom div.
-   Hit every common Tabler pattern.
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-/* Tabler avatar with bg-primary/bg-blue */
-.avatar.bg-primary,
-.avatar.bg-blue,
-.avatar.bg-azure,
-.avatar.text-white.bg-primary,
-.avatar.text-white.bg-blue {
-  background-color: #8b3a1f !important;
-  color: #fff !important;
-}
-
-/* Generic rounded-circle + bg-primary combos */
-.rounded-circle.bg-primary,
-.rounded-circle.bg-blue,
-[class*="rounded"].bg-primary,
-[class*="rounded"].bg-blue {
-  background-color: #8b3a1f !important;
-  color: #fff !important;
-}
-
-/* Service icon wrapper divs — common patterns in card-based service grids */
-.service-icon,
-.icon-circle,
-.icon-wrap,
-.service-card .icon,
-.card .service-icon,
-[class*="service-icon"] {
-  background-color: #8b3a1f !important;
-  color: #fff !important;
-}
-
-/* Catch-all: any circle with bg-primary regardless of nesting */
-[class~="bg-primary"][class~="rounded-circle"],
-[class~="bg-blue"][class~="rounded-circle"],
-[style*="background-color: rgb(32, 107, 196)"],
-[style*="background-color:#206bc4"],
-[style*="background: #206bc4"] {
-  background-color: #8b3a1f !important;
-  color: #fff !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   30. NAVBAR CTA BUTTON ("GET A FREE ESTIMATE" in navbar)
-   When rendered as btn-primary inside navbar it can inherit the old blue
-   if the navbar bg overrides specificity. Force it here.
-   ═══════════════════════════════════════════════════════════════════════════ */
-#cmp-navbar .btn-primary,
-.navbar .btn-primary,
-nav .btn-primary,
-.navbar-nav .btn-primary {
-  background-color: #8b3a1f !important;
-  border-color: #8b3a1f !important;
-  color: #fff !important;
-}
-
-#cmp-navbar .btn-primary:hover,
-.navbar .btn-primary:hover,
-nav .btn-primary:hover {
-  background-color: #6a2c17 !important;
-  border-color: #6a2c17 !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   31. HERO CTA BUTTON (large "Get A Free Estimate" over photo)
-   ═══════════════════════════════════════════════════════════════════════════ */
-.hero .btn-primary,
-.hero-caption .btn-primary,
-.hero a.btn-primary {
-  background-color: #8b3a1f !important;
-  border-color: #8b3a1f !important;
-  color: #fff !important;
-}
-
-.hero .btn-primary:hover,
-.hero-caption .btn-primary:hover {
-  background-color: #6a2c17 !important;
-  border-color: #6a2c17 !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   32. STATS BAR icons / circles
-   ═══════════════════════════════════════════════════════════════════════════ */
-#cmp-stats-bar [class*="bg-primary"],
-#cmp-stats-bar [class*="bg-blue"],
-#cmp-stats-bar .rounded-circle,
-#cmp-stats-bar .avatar {
-  background-color: #8b3a1f !important;
-  color: #fff !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   33. INLINE STYLE OVERRIDE (last resort)
-   If components.js sets style="background-color:#206bc4" or similar inline,
-   the attribute selectors above catch it. Also catch Bootstrap's rgba form.
+   19. INLINE STYLE CATCH
+   If components.js emits style="background-color:#206bc4"
    ═══════════════════════════════════════════════════════════════════════════ */
 [style*="206bc4"] { background-color: #8b3a1f !important; }
-[style*="4299e1"] { background-color: #b85c35 !important; }
+[style*="4299e1"] { background-color: #c8a060 !important; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   20. GOLD DESIGN UPGRADES  (stolen from reference)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── A: Section header label → gold ALL-CAPS + gold rule ── */
+.section-label {
+  display: block;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #c8a060;
+  margin-bottom: .35rem;
+}
+
+.section-label + h1,
+.section-label + h2,
+.section-label + .display-5 {
+  margin-top: 0;
+}
+
+/* gold underline rule — add <span class="gold-rule"></span> under label */
+.gold-rule {
+  display: block;
+  width: 36px;
+  height: 2px;
+  background-color: #c8a060;
+  border-radius: 1px;
+  margin: .4rem 0 .7rem;
+}
+
+/* ── B: Dark espresso section ── */
+.section-dark {
+  background-color: #2a1206 !important;
+  color: #e8d8cc;
+}
+
+.section-dark h1, .section-dark h2, .section-dark h3,
+.section-dark .display-5 {
+  color: #f5ddd0;
+}
+
+.section-dark .text-muted,
+.section-dark p {
+  color: #b09080 !important;
+}
+
+.section-dark .section-label { color: #c8a060; }
+
+.section-dark .btn-primary {
+  background-color: #c8a060 !important;
+  border-color: #c8a060 !important;
+  color: #fff !important;
+}
+
+.section-dark .btn-primary:hover {
+  background-color: #a8804a !important;
+  border-color: #a8804a !important;
+}
+
+/* ── C: Gold section (for CTA banner) ── */
+.section-gold {
+  background-color: #c8a060 !important;
+  color: #fff !important;
+}
+
+.section-gold h1, .section-gold h2, .section-gold h3 {
+  color: #fff;
+}
+
+.section-gold .btn {
+  background-color: #2a1206 !important;
+  border-color: #2a1206 !important;
+  color: #fff !important;
+}
+
+/* ── D: Numbered feature list ── */
+.feature-list { list-style: none; padding: 0; margin: 0; }
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+  padding: .6rem 0;
+  border-bottom: 1px solid #e8ddd4;
+}
+
+.feature-list li:last-child { border-bottom: none; }
+
+.feature-num {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #c8a060;
+  min-width: 2rem;
+  line-height: 1.3;
+}
+
+.feature-text { font-size: .875rem; color: #2a1206; line-height: 1.4; }
+.feature-sub  { font-size: .75rem; color: #8c6050; margin-top: .1rem; }
+
+/* ── E: Gold stat blocks ── */
+.stat-gold {
+  background-color: #c8a060;
+  color: #fff;
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  text-align: center;
+}
+
+.stat-gold .stat-value {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stat-gold .stat-label {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  opacity: .85;
+  margin-top: .25rem;
+}
+
+.stat-dark {
+  background-color: #2a1206;
+  color: #c8a060;
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  text-align: center;
+}
+
+.stat-dark .stat-value {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #c8a060;
+}
+
+.stat-dark .stat-label {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #d4b8a8;
+  margin-top: .25rem;
+}
+
+/* ── F: Dark CTA banner (bottom of page) ── */
+.cta-banner {
+  background-color: #2a1206;
+  padding: 3rem 0;
+  position: relative;
+}
+
+.cta-banner h2, .cta-banner .display-5 {
+  color: #f5ddd0;
+}
+
+.cta-banner p { color: #b09080; }
+
+.cta-banner .btn-cta {
+  background-color: #c8a060;
+  border-color: #c8a060;
+  color: #fff;
+  font-weight: 700;
+  padding: .75rem 2rem;
+  font-size: 1rem;
+}
+
+.cta-banner .btn-cta:hover {
+  background-color: #a8804a;
+  border-color: #a8804a;
+}
+
+/* ── G: about section text-primary span → gold ── */
+#about .text-primary,
+#about span.text-primary {
+  color: #c8a060 !important;
+}
+
+/* ── H: section headings with .text-primary spans → gold ── */
+.text-center .text-primary,
+.text-center span.text-primary {
+  color: #c8a060 !important;
+}
 
