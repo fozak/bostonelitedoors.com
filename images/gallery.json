@@ -1,137 +1,47 @@
 [
-  {
-    "name": "home-remodeling-01-living-room.jpg"
-  },
-  {
-    "name": "home-remodeling-02-kitchen-white.jpg"
-  },
-  {
-    "name": "home-remodeling-03-kitchen-appliances.png"
-  },
-  {
-    "name": "home-remodeling-04-room-addition-framing.jpg"
-  },
-  {
-    "name": "home-remodeling-05-basement-flooring.jpg"
-  },
-  {
-    "name": "home-remodeling-06-bathroom-ceiling.jpg"
-  },
-  {
-    "name": "home-remodeling-07-bathroom-vanity.png"
-  },
-  {
-    "name": "home-remodeling-08-bathroom-tile.jpg"
-  },
-  {
-    "name": "home-remodeling-09-bathroom-mirror.jpg"
-  },
-  {
-    "name": "home-remodeling-10-bathroom-marble.jpg"
-  },
-  {
-    "name": "home-remodeling-11-photo.jpeg"
-  },
-  {
-    "name": "home-remodeling-13-photo.jpeg"
-  },
-  {
-    "name": "home-remodeling-15-photo.jpeg"
-  },
-  {
-    "name": "home-remodeling-17-photo.jpeg"
-  },
-  {
-    "name": "home-remodeling-19-photo.jpeg"
-  },
-  {
-    "name": "home-remodeling-20-photo.jpeg"
-  },
-  {
-    "name": "home-remodeling-21-photo.jpeg"
-  },
-  {
-    "name": "home-remodeling-22-photo.jpeg"
-  },
-  {
-    "name": "home-remodeling-23-photo.jpeg"
-  },
-  {
-    "name": "home-remodeling-24-photo.jpeg"
-  },
-  {
-    "name": "home-remodeling-25-photo.jpeg"
-  },
-  {
-    "name": "home-remodeling-26-photo.jpeg"
-  },
-  {
-    "name": "home-remodeling-27-photo.jpeg"
-  },
-  {
-    "name": "home-remodeling-28-photo.jpeg"
-  },
-  {
-    "name": "home-remodeling-29-photo.jpeg"
-  },
-  {
-    "name": "home-remodeling-30-photo.jpeg"
-  },
-  {
-    "name": "home-remodeling-31-photo.jpeg"
-  },
-  {
-    "name": "home-remodeling-32-photo.jpeg"
-  },
-  {
-    "name": "home-remodeling-33-photo.jpeg"
-  },
-  {
-    "name": "interior-repairs-01-green-wall.jpg"
-  },
-  {
-    "name": "interior-repairs-02-hallway-kitchen.jpg"
-  },
-  {
-    "name": "interior-repairs-03-exterior-wall-repair.jpg"
-  },
-  {
-    "name": "interior-repairs-04-door-installation.jpg"
-  },
-  {
-    "name": "landscaping-tree-services-01-excavation.jpg"
-  },
-  {
-    "name": "landscaping-tree-services-02-tree-removal.jpg"
-  },
-  {
-    "name": "landscaping-tree-services-03-logs-cut.jpg"
-  },
-  {
-    "name": "landscaping-tree-services-04-exterior-house.jpg"
-  },
-  {
-    "name": "landscaping-tree-services-05-aerial-drone.jpg"
-  },
-  {
-    "name": "landscaping-tree-services-06-deck-pergola.jpg"
-  },
-  {
-    "name": "roofing-siding-01-aerial-exterior.jpg"
-  },
-  {
-    "name": "roofing-siding-02-roof-stripped.jpg"
-  },
-  {
-    "name": "roofing-siding-03-roof-stripped-internal.jpg"
-  },
-  {
-    "name": "roofing-siding-03-roof-close.jpg"
-  },
-  {
-    "name": "roofing-siding-04-blue-tarp.jpg"
-  },
-  {
-    "name": "solar-energy-01-panel-installation.jpg"
-  }
+  { "name": "door-repair-01.jpg" },
+  { "name": "door-repair-02.jpg" },
+  { "name": "door-repair-03.jpg" },
+  { "name": "door-repair-04.jpg" },
+  { "name": "door-repair-05.jpg" },
+  { "name": "door-repair-06.jpg" },
+  { "name": "door-installation-01.jpg" },
+  { "name": "door-installation-02.jpg" },
+  { "name": "door-installation-03.jpg" },
+  { "name": "door-installation-04.jpg" },
+  { "name": "door-installation-05.jpg" },
+  { "name": "door-installation-06.jpg" },
+  { "name": "door-restoration-01.jpg" },
+  { "name": "door-restoration-02.jpg" },
+  { "name": "door-restoration-03.jpg" },
+  { "name": "door-restoration-04.jpg" },
+  { "name": "door-restoration-05.jpg" },
+  { "name": "door-restoration-06.jpg" },
+  { "name": "door-hardware-01.jpg" },
+  { "name": "door-hardware-02.jpg" },
+  { "name": "door-hardware-03.jpg" },
+  { "name": "door-hardware-04.jpg" },
+  { "name": "door-hardware-05.jpg" },
+  { "name": "door-hardware-06.jpg" },
+  { "name": "door-weatherproofing-01.jpg" },
+  { "name": "door-weatherproofing-02.jpg" },
+  { "name": "door-weatherproofing-03.jpg" },
+  { "name": "door-weatherproofing-04.jpg" },
+  { "name": "door-weatherproofing-05.jpg" },
+  { "name": "door-weatherproofing-06.jpg" },
+  { "name": "finish-carpentry-01.jpg" },
+  { "name": "finish-carpentry-02.jpg" },
+  { "name": "finish-carpentry-03.jpg" },
+  { "name": "finish-carpentry-04.jpg" },
+  { "name": "finish-carpentry-05.jpg" },
+  { "name": "finish-carpentry-06.jpg" },
+  { "name": "custom-doors-01.jpg" },
+  { "name": "custom-doors-02.jpg" },
+  { "name": "custom-doors-03.jpg" },
+  { "name": "custom-doors-04.jpg" },
+  { "name": "custom-doors-05.jpg" },
+  { "name": "custom-doors-06.jpg" },
+  { "name": "custom-doors-07.jpg" },
+  { "name": "custom-doors-08.jpg" },
+  { "name": "custom-doors-09.jpg" }
 ]

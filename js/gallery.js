@@ -2,29 +2,29 @@
 // Drop new images into /images with the naming convention and they appear automatically.
 
 const GITHUB_API = '/images/gallery.json';
-const RAW_BASE   = 'https://raw.githubusercontent.com/fozak/bostonelitecontractors.com/main/images/';
+const RAW_BASE   = window.location.origin + '/images/';
 const IMAGE_EXTS = /\.(jpg|jpeg|png|gif|webp)$/i;
 const NAMED_RE   = /^([\w-]+?)-(\d+)-(.+)\.(jpg|jpeg|png|gif|webp)$/i;
 const SKIP       = ['logo.png'];
 
 const CAT_LABELS = {
-  'home-remodeling':           'Home Remodeling',
-  'roofing-siding':            'Roofing & Siding',
-  'interior-repairs':          'Interior Repairs',
-  'landscaping-tree-services': 'Landscaping & Tree',
-  'solar-energy':              'Solar Energy',
-  'consulting':                'Consulting',
-  'pest-control':              'Pest Control',
+  'door-repair':          'Door Repair',
+  'door-installation':    'Door Installation',
+  'door-restoration':     'Door Restoration',
+  'door-hardware':        'Hardware & Locks',
+  'door-weatherproofing': 'Weatherproofing',
+  'finish-carpentry':     'Finish Carpentry',
+  'custom-doors':         'Custom Doors',
 };
 
 const CAT_ICONS = {
-  'home-remodeling':           'fa-home',
-  'roofing-siding':            'fa-hard-hat',
-  'interior-repairs':          'fa-paint-roller',
-  'landscaping-tree-services': 'fa-tree',
-  'solar-energy':              'fa-solar-panel',
-  'consulting':                'fa-briefcase',
-  'pest-control':              'fa-bug',
+  'door-repair':          'fa-tools',
+  'door-installation':    'fa-door-open',
+  'door-restoration':     'fa-paint-brush',
+  'door-hardware':        'fa-key',
+  'door-weatherproofing': 'fa-wind',
+  'finish-carpentry':     'fa-ruler-combined',
+  'custom-doors':         'fa-star',
 };
 
 function categoryFromName(filename) {
@@ -49,7 +49,7 @@ function iconFor(cat) {
   return CAT_ICONS[cat] || 'fa-image';
 }
 
-const CACHE_KEY = 'ec_gallery_v1';
+const CACHE_KEY = 'bec_gallery_v1';
 const CACHE_TTL = 60 * 60 * 1000; // 1 hour
 
 function skeletonHTML(n) {
@@ -67,12 +67,10 @@ async function loadGallery() {
   const tabsEl = document.querySelector('.filter-tabs');
   if (!grid) return;
 
-  // Show skeletons immediately while fetching
   grid.innerHTML = skeletonHTML(9);
 
   let files;
 
-  // Try sessionStorage cache first — avoids repeat API calls on reload
   try {
     const cached = sessionStorage.getItem(CACHE_KEY);
     if (cached) {
@@ -86,7 +84,6 @@ async function loadGallery() {
       const res = await fetch(GITHUB_API);
       if (!res.ok) throw new Error('GitHub API ' + res.status);
       const all = await res.json();
-      // gallery.json only contains valid named files — no filtering needed
       files = all;
       try { sessionStorage.setItem(CACHE_KEY, JSON.stringify({ data: files, ts: Date.now() })); } catch (_) {}
     } catch (e) {
@@ -95,7 +92,6 @@ async function loadGallery() {
     }
   }
 
-  // Sort by category then by number
   files.sort((a, b) => {
     const ma = a.name.match(NAMED_RE);
     const mb = b.name.match(NAMED_RE);
@@ -104,13 +100,10 @@ async function loadGallery() {
     return parseInt(ma[2]) - parseInt(mb[2]);
   });
 
-  // Build ordered unique category list (preserving CAT_LABELS order)
   const catsInFiles = new Set(files.map(f => categoryFromName(f.name)));
   const orderedCats = Object.keys(CAT_LABELS).filter(c => catsInFiles.has(c));
-  // append any unknown cats not in CAT_LABELS
   catsInFiles.forEach(c => { if (!CAT_LABELS[c]) orderedCats.push(c); });
 
-  // Render filter buttons
   if (tabsEl) {
     tabsEl.innerHTML = `<button class="filter-btn active" data-filter="all">All Projects</button>` +
       orderedCats.map(cat =>
@@ -120,7 +113,6 @@ async function loadGallery() {
       ).join('');
   }
 
-  // Render gallery items
   grid.innerHTML = files.map(f => {
     const cat   = categoryFromName(f.name);
     const title = titleFromName(f.name);
@@ -138,7 +130,6 @@ async function loadGallery() {
       </div>`;
   }).join('');
 
-  // Wire up filter + lightbox
   initGallery();
 }
 
@@ -157,7 +148,6 @@ function initGallery() {
     });
   });
 
-  // Lightbox
   const lightbox  = document.getElementById('lightbox');
   if (!lightbox) return;
   const lbImg     = document.getElementById('lbImg');
@@ -210,5 +200,4 @@ function initGallery() {
   });
 }
 
-// Entry point — wait for components (lightbox) to be ready
 document.addEventListener('components:ready', loadGallery);
