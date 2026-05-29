@@ -109,8 +109,8 @@ h1, h2, h3, h4, h5, h6,
 #cmp-topbar .bg-dark,
 #cmp-topbar .navbar,
 #cmp-topbar [class] {
-  background-color: #1e1008 !important;
-  border-bottom-color: #3a1a08 !important;
+  background-color: #c8a060 !important;
+  /* border-bottom-color: #3a1a08 !important; */
 }
 
 #cmp-topbar,

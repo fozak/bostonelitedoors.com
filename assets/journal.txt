@@ -1,0 +1,2 @@
+TODO: improve logo (fonts)
+TODO: hamburger (why in navbar in desktop next to logo)
